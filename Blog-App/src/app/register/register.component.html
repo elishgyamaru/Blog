@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <form id="login-form" [formGroup]="form" class="small" (ngSubmit)="onRegister()">
+                <h6 class="text-center text-info mb-4">Register</h6>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input formControlName="UserName" type="text" name="UserName" class="form-control-sm form-control">
+                    <div class="text-danger" *ngIf="form.controls.UserName.errors?.required">Username is required</div>  
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input formControlName="Email" type="text" name="Email" class="form-control-sm form-control">
+                    <div class="text-danger" *ngIf="form.controls.Email.errors?.required">Email is required</div>
+                    <div class="text-danger" *ngIf="form.controls.Email.errors?.email">Enter valid email</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input formControlName="Password" type="text" name="Password"  class="form-control form-control-sm">
+                    <div class="text-danger" *ngIf="form.controls.Password.errors?.required">Password is required</div>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input formControlName="ConfirmPassword"  type="text" name="ConfirmPassword" placeholder="" id="confirmPassword" class="form-control form-control-sm">
+                    <div class="text-danger" *ngIf="form.controls.ConfirmPassword.errors?.required">Password is required</div>
+                    <div class="text-danger" *ngIf="form.controls.ConfirmPassword.errors?.PasswordMismatch">Passwords do not match</div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-info btn-sm">Sign Up</button>
+                </div>
+                <div class="text-right">
+                    <a routerLink="/login" class="text-info">Already have an acount? Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

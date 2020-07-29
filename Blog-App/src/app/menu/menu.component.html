@@ -1,0 +1,12 @@
+<div>
+  <mat-sidenav-container>
+    <mat-sidenav [style.visibility]="'visible'" #sidenav mode="side" [opened]="true" class="p-2 text-center">
+      <a mat-list-item [routerLink]="'/dashboard/blog'" class="p-2"><i class="fa fa-edit"></i></a>
+        <a mat-list-item [routerLink]="['users']" class="p-2"><i class="fa fa-users"></i></a>
+        <a mat-list-item [routerLink]="['profile']" class="p-2"> <i class="fa fa-user"></i></a>
+    </mat-sidenav>
+    <mat-sidenav-content class="py-1">
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

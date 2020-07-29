@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="card my-2 col-xs-12 p-2">
+      <div class="title-wrappper text-center font-weight-bold">
+        <h3>{{blog.title}}</h3>
+      </div>
+      <div>
+          <quill-view [class]="'p-2'"
+          [content]="blog.content"
+          format="html"
+          theme="bubble"
+          [debug]="false"
+          [style]="{'padding':'0px'}"
+          [sanitize]="true">
+        </quill-view>
+      </div>
+    </div>
+  </div>
+</div>

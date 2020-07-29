@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light py-0 small">
+  <a class="navbar-brand" routerLink="">Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <!-- <a class="nav-item nav-link active" routerLink="" routerLinkActive="text-primary">Home <span class="sr-only">(current)</span></a> -->
+    </div>
+    <div class="navbar-nav ml-auto"> 
+      <a *ngIf="!isLoggedIn" class="nav-item nav-link" routerLink="/login" routerLinkActive="text-primary">Login</a>
+      <div *ngIf="isLoggedIn" class="btn-group" dropdown>
+        <span mat-icon-button [matMenuTriggerFor]="menu">
+          {{user.username}}
+        </span>
+        <mat-menu #menu="matMenu" yPosition="below">
+          <span mat-menu-item>
+            <a [routerLink]="['/dashboard']">Dashboard</a>
+          </span>
+          <span mat-menu-item>
+            <span (click)="onLogOut()">Logout</span>
+          </span>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+
+</nav>

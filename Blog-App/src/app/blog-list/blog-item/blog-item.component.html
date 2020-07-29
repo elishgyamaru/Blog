@@ -1,0 +1,15 @@
+<div class="card my-2 col-xs-6 p-2">
+  <div class="title-wrappper">
+    <a [routerLink]="['blog-detail',(blog.id).toString()]">{{blog.title}}</a>
+  </div>
+  <div>
+      <quill-view [class]="'p-2'"
+      [content]="blog.content"
+      format="html"
+      theme="bubble"
+      [debug]="false"
+      [style]="{'padding':'0px'}"
+      [sanitize]="true">
+    </quill-view>
+  </div>
+</div>

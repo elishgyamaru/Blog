@@ -1,0 +1,13 @@
+.card{
+    border: 1px solid #eaeaea;
+    padding: 25px;
+    box-shadow: 0px 0px 300px 200px rgba(112, 99, 99, 0.05);
+    background-color: #ffffff;
+    z-index: 1;
+}
+.title-wrappper > a{
+text-decoration: none;
+color: black;
+font-weight: 500;
+font-size: large;
+}
