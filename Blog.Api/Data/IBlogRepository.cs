@@ -14,6 +14,7 @@ namespace Blog.Api.Data
          void Delete(T t);
          Task<T> GetSingleAsync(int id);
          Task<T> GetSingleAsync(Expression<Func<T,bool>> predicate);
+        Task<IEnumerable<T>> FindBy(params Expression<Func<T,bool>>[] conditions);
          Task<T> GetSingleIncluding(Expression<Func<T,bool>> predicate,Expression<Func<T,object>>[] includeList);
         Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T,object>>[] includeList);
         Task<bool> SaveAll();

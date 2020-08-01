@@ -5,10 +5,12 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
     declarations:[],
     imports:[
+        CommonModule
     ],
     exports:[
         MatSidenavModule,
@@ -16,7 +18,7 @@ import { NgModule } from '@angular/core';
         MatToolbarModule,
         MatButtonModule,
         MatTabsModule,
-        MatMenuModule
+        MatMenuModule,
     ]
 })
 export class AngularMaterialModules{}

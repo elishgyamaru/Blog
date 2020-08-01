@@ -23,9 +23,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { AngularMaterialModules } from './angular-material.modules';
 import { AuthInterceptor } from './_interceptors/auth-interceptor';
 import { BlogListComponent } from './blog-list/blog-list.component';
-import { BlogItemComponent } from './blog-list/blog-item/blog-item.component';
 import { TagListComponent } from './tag-list/tag-list.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
+import { BlogItemComponent } from './blog-item/blog-item.component';
 
 @NgModule({
    declarations: [
@@ -42,7 +42,8 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
       BlogListComponent,
       BlogItemComponent,
       TagListComponent,
-      BlogDetailComponent
+      BlogDetailComponent,
+      BlogItemComponent
    ],
    imports: [
       BrowserModule,
@@ -58,7 +59,7 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
       AngularMaterialModules
    ],
    providers: [
-      {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor,multi:true}
+      {provide:HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}
    ],
    bootstrap: [
       AppComponent

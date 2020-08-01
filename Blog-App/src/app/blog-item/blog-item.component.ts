@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Blog } from 'src/app/_models/Blog';
+import { Blog } from '../_models/Blog';
 
 @Component({
   selector: 'app-blog-item',
@@ -7,7 +7,9 @@ import { Blog } from 'src/app/_models/Blog';
   styleUrls: ['./blog-item.component.css']
 })
 export class BlogItemComponent implements OnInit {
+
   @Input() blog:Blog;
+  
   constructor() { }
 
   ngOnInit() {

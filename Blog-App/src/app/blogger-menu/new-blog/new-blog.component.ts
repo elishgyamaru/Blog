@@ -27,7 +27,7 @@ export class NewBlogComponent implements OnInit, CanDeactivateBase {
     ]
   };
   private editorInstance: any;  
-  newBlog: any = {}
+  newBlog: any = {};
   constructor(private fb: FormBuilder, 
     private router:Router,
     private blogService: BlogService) { }

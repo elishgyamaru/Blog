@@ -35,6 +35,15 @@ namespace Blog.Api.Data
             }
             return await query.ToListAsync();
         }
+        public async Task<IEnumerable<T>> FindBy(params Expression<Func<T,bool>>[] conditions)
+        {
+            IQueryable<T> query=_context.Set<T>();
+            foreach(var condition in conditions)
+            {
+                query.Where(condition);
+            }
+            return await query.ToListAsync();
+        }
 
         public async Task<T> GetSingleAsync(int id)
         {

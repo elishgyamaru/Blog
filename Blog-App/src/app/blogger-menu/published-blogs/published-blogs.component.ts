@@ -3,16 +3,16 @@ import { Blog } from 'src/app/_models/Blog';
 import { BlogService } from 'src/app/_services/blog.service';
 
 @Component({
-  selector: 'app-draft',
-  templateUrl: './draft.component.html',
-  styleUrls: ['./draft.component.css']
+  selector: 'app-published-blogs',
+  templateUrl: './published-blogs.component.html',
+  styleUrls: ['./published-blogs.component.css']
 })
-export class DraftComponent implements OnInit {
+export class PublishedBlogsComponent implements OnInit {
   blogs:Blog[];
   constructor(private blogService:BlogService) { }
 
   ngOnInit() {
-    this.blogService.getAllDrafts().subscribe(
+    this.blogService.getAlPublishedBlogs().subscribe(
       (returnedBlogs)=>{
         this.blogs=returnedBlogs;
       }

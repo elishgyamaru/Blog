@@ -10,9 +10,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { PreviewComponent } from './preview/preview.component';
 import { NewBlogComponent } from './blogger-menu/new-blog/new-blog.component';
 import { DraftComponent } from './blogger-menu/draft/draft.component';
-import { PublishedComponent } from './blogger-menu/published/published.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { BlogDetailResolver } from './_resolvers/blog-detail.resolver';
+import { PublishedBlogsComponent } from './blogger-menu/published-blogs/published-blogs.component';
 
 
 const routes:Routes=[
@@ -27,10 +27,10 @@ const routes:Routes=[
     { path:"blog",
       component:BloggerMenuComponent,
       children:[
-        { path:"",redirectTo:"dashboard/blog/new",pathMatch:"full"},
+        { path:"",redirectTo:"dashboard/blog/new", pathMatch:"full"},
         { path:"new",component:NewBlogComponent,canDeactivate:[PreventUnsavedChangesGuard]},
         { path:"draft",component:DraftComponent},
-        { path:"published",component:PublishedComponent}
+        { path:"published",component:PublishedBlogsComponent}
       ]
     },
     {path:"admin",component:BloggerMenuComponent},

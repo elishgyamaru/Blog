@@ -24,6 +24,12 @@ createNewBlog(blog:Blog, isDraft=false){
 getAllBlog():Observable<Blog[]>{
   return this.http.get<Blog[]>(this.baseUrl);
 }
+getAlPublishedBlogs():Observable<Blog[]>{
+  return this.http.get<Blog[]>(this.baseUrl+"published");
+}
+getAllDrafts():Observable<Blog[]>{
+  return this.http.get<Blog[]>(this.baseUrl+"drafts");
+}
 getBlog(id:string){
   return this.http.get(this.baseUrl+id);
 }

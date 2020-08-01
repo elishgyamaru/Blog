@@ -52,7 +52,20 @@ namespace Blog.Api.Controllers
             var blogs = await _repo.GetSingleAsync(id);
             return Ok(blogs);
         }
-
+        [HttpGet("published")]
+        public async Task<IActionResult> GetAllPublished()
+        {
+            var userId=int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var blogs = await _repo.FindBy(be=>be.AuthorId==userId,be=>be.isDraft==false);
+            return Ok(blogs);
+        }
+        [HttpGet("Drafts")]
+        public async Task<IActionResult> GetAllDrafts()
+        {
+            var userId=int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var blogs = await _repo.FindBy(be=>be.AuthorId==userId,be=>be.isDraft==true);
+            return Ok(blogs);
+        }
         [HttpPost]
         public async Task<IActionResult> CreateBlog(BlogCreationDto blogDto)
         {
@@ -62,7 +75,6 @@ namespace Blog.Api.Controllers
             var blog = mapper.Map<BlogEntity>(blogDto);
             blog.PreviewContent=SetPreviewContent(blog.Content);
             blog.AuthorId=userId;
-            blog.Author=
             _repo.Add(blog);
             if (await _repo.SaveAll())
             {
